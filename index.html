@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="MenuCategoriesApp">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+  </head>
+<body>
+   <div class="container" ng-controller="MenuCategoriesController">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control" ng-model="singh">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click=checkitem(singh)>Narrow It Down For Me!</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ol>
+        <li ng-repeat="items in founds"><ul><li>{{items.short_name}}</li><li>{{items.name}}  <button ng-click=removeitem($index)>REMOVE ITEM</button></li><li>{{items.description}}</li></ul></li>
+      </ol>
+      <div ng-hide="found1" style="color: red">NOTHING FOUND!!</div>
+    </div>
+
+</body>
+</html>
